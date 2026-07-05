@@ -1,0 +1,56 @@
+---
+const frameworks = ['readme', 'astro', 'react', 'vue', 'svelte'];
+
+let selectedFramework = frameworks.find(framework => Astro.url.pathname.includes(framework)) || 'readme'; // значение по умолчанию
+---
+
+<div class="framework-selector">
+  <label for="framework-select">Выберите фреймворк:</label>
+  <select 
+    id="framework-select" 
+    name="framework" 
+    class="framework-select"
+  >
+    {frameworks.map(framework => (
+      <option value={framework} selected={framework === selectedFramework}>
+        {framework.charAt(0).toUpperCase() + framework.slice(1)}
+      </option>
+    ))}
+  </select>
+</div>
+<script>
+    // Find all buttons with the `alert` class on the page.
+    const select = document.getElementById('framework-select');
+
+    // Handle clicks on each button.
+    select?.addEventListener('input', (e) => {
+        const value = e?.target?.value || 'astro';
+            
+        window.location.href = `/${value}`;
+    });
+</script>
+
+<style>
+  .framework-selector {
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .framework-select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+</style>

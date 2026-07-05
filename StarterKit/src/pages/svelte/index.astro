@@ -1,0 +1,8 @@
+---
+import WelcomeSvelte from '../../frameworks/svelte/Welcome.svelte';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout>
+	<WelcomeSvelte client:only="svelte" />
+</Layout>

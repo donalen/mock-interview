@@ -1,0 +1,23 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import README from '../../../README.md';
+
+---
+
+<Layout>
+	<div class="container">
+		<README />
+	</div>
+</Layout>
+
+<style>
+	.container {
+		padding: 1rem;
+		background-image: url(../../assets/background.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		height: -webkit-fill-available;
+	}
+</style>
