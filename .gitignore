@@ -1,0 +1,26 @@
+# dependencies
+StarterKit/node_modules/
+
+# build output
+StarterKit/dist/
+StarterKit/.astro/
+
+# env files
+StarterKit/.env
+StarterKit/.env.*
+!StarterKit/.env.example
+
+# logs
+StarterKit/npm-debug.log*
+StarterKit/yarn-debug.log*
+StarterKit/yarn-error.log*
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# macOS zip artifacts
+__MACOSX/
